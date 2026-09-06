@@ -1,0 +1,27 @@
+node_modules/
+dist/
+# Local copy of the static deployment
+/astral/
+.yarn/
+*.local
+
+# Local configuration and secrets (keep a shareable example)
+.env
+.env.*
+!.env.example
+
+# Logs and test output
+*.log
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.swo
+
+# Keep yarn.lock, .yarnrc.yml, and source/configuration files in Git.
