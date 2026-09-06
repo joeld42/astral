@@ -5,6 +5,9 @@ dist/
 .yarn/
 *.local
 
+# Scripts only for dist
+scripts/dist_to_server.sh
+
 # Local configuration and secrets (keep a shareable example)
 .env
 .env.*
