@@ -1,4 +1,5 @@
 import { bassNames, arpNames, padNames, type Instruments } from "./instruments";
+import { generateSongName } from "./songNames";
 export const keys = [
   "C",
   "C#",
@@ -152,16 +153,13 @@ export function generateSong(
     [0, 6, 3, 4],
     [0, 2, 5, 3],
   ]);
+  // Preserve the music RNG position used by the old title picker.
+  r();
+  const name = generateSongName(rng(seed ^ 0x6a09e667));
   return {
     version: 1,
     seed,
-    name: pick([
-      "A distant memory",
-      "Between satellites",
-      "Slow orbit",
-      "Where light dissolves",
-      "The sleeping city",
-    ]),
+    name,
     key: pick(["D", "A", "F#", "C", "E"]),
     mode: pick(["Aeolian", "Dorian", "Lydian", "Mixolydian"] as Mode[]),
     bpm: pick([68, 72, 76, 80, 84, 88]),

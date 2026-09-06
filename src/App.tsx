@@ -444,13 +444,16 @@ export default function App() {
         <div className="song-heading">
           <div>
             <div className="eyebrow">SONG</div>
-            <input
-              aria-label="Song title"
-              className="song-title"
-              value={song.name}
-              maxLength={120}
-              onChange={(e) => patch({ name: e.target.value })}
-            />
+            <div className="song-title-wrap" data-value={song.name}>
+              <textarea
+                aria-label="Song title"
+                className="song-title"
+                rows={1}
+                value={song.name}
+                maxLength={120}
+                onChange={(e) => patch({ name: e.target.value })}
+              />
+            </div>
             <div className="song-meta">
               <span className="badge">AMBIENT / ELECTRONIC</span>
               <span>Seed {song.seed}</span>
